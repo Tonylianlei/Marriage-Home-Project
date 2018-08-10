@@ -1,8 +1,10 @@
-package com.example.demo.controller;
+package com.example.demo.controller.user;
 
 import com.example.demo.async.ThreadAsyncPool;
 import com.example.demo.async.task.UserTask;
+import com.example.demo.bean.LoveUser;
 import com.example.demo.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +26,8 @@ public class UserController {
     private ThreadAsyncPool threadAsyncPool;
 
     @RequestMapping(value = "/getUser" , method = RequestMethod.GET)
-    public String getUser(){
+    @ApiOperation(value="测试接口", notes="测试接口详细描述")
+    public String getUser(LoveUser loveUser){
         System.out.println("展示呢公司");
         ThreadPoolExecutor asyncExecutor = threadAsyncPool.getAsyncExecutor();
         UserTask userTask = new UserTask(userService);

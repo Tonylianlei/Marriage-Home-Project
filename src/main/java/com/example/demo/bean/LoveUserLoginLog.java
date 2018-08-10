@@ -1,7 +1,5 @@
 package com.example.demo.bean;
 
-import lombok.Data;
-
 import java.util.Date;
 
 /**
@@ -151,5 +149,4 @@ public class LoveUserLoginLog {
     public void setLoginAddress(String loginAddress) {
         this.loginAddress = loginAddress == null ? null : loginAddress.trim();
     }
-
 }
